@@ -5,30 +5,24 @@ import lombok.*;
 
 import java.time.Instant;
 
+@Entity(name = "members")
 @Getter
 @Setter
 @Builder
-@AllArgsConstructor
 @NoArgsConstructor
-@Entity(name = "tasks")
-public class Task {
+@AllArgsConstructor
+public class Member {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     @Column(nullable = false)
-    private String contents;
+    private String email;
 
     @Column(nullable = false)
-    private boolean isDone;
+    private String userName;
 
     @Column(nullable = false)
-    private Instant modifiedDate;
-
-    @Column(nullable = false)
-    private Instant createdDate;
-
-    @ManyToOne
-    Member member;
+    private Instant signupDate;
 }
