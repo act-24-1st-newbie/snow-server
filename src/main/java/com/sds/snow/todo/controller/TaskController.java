@@ -22,9 +22,9 @@ public class TaskController {
         return service.createTask(dto);
     }
 
-    @GetMapping
-    public List<TaskDto.FindRes> getTasks() {
-        return service.getTasks();
+    @GetMapping("/{id}")
+    public List<TaskDto.FindRes> getTasks(@PathVariable("id") Long memberId) {
+        return service.getTasks(memberId);
     }
 
     @PatchMapping("/{id}")
