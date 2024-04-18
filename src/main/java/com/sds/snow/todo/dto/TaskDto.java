@@ -1,11 +1,10 @@
 package com.sds.snow.todo.dto;
 
-import java.time.Instant;
-
 public class TaskDto {
 
     public record CreateReq(
-            String contents
+            String contents,
+            Long memberId
     ) {}
 
     public record UpdateReq(

@@ -7,5 +7,5 @@ import java.util.List;
 
 public interface TaskRepository extends JpaRepository<Task, Long> {
 
-    List<Task> findAllByOrderById();
+    List<Task> findAllByMemberIdOrderById(Long memberId);
 }
